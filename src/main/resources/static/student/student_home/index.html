@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" >
+  <!--Created by Tivotal-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RK Events</title>
+
+    <!--swiper css-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <!--font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
+    <!--css file-->
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+    	.vol-true{
+    		display:none;
+    	}
+    	.vol-false{
+    		display:block;
+    	}
+    </style>
+  </head>
+  <body>
+    <!-- header section starts  -->
+    <header class="header">
+      <a href="#" class="logo"><span>RK</span>Events</a>
+
+      <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#service">service</a>
+        <a href="#about">about</a>
+        <a href="#gallery">gallery</a>
+        <a href="#review">review</a>
+        <a href="/logout">logout</a>
+      </nav>
+
+      <div id="menu-bars" class="fas fa-bars"></div>
+    </header>
+
+    <!-- home section starts  -->
+    <section class="home" id="home">
+      <div class="content">
+        <h3>
+          where your ideas take off
+          <span> RGUKT RK VALLEY </span>
+        </h3>
+        <div id="volunteer"><a href="/student/student_home/volunteer" class="btn"> Register as Volunteer</a></div>
+      </div>
+
+      <div class="swiper-container home-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="WebPhotos/p1.jpeg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="WebPhotos/p2.jpeg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="WebPhotos/p3.jpeg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="WebPhotos/p4.jpeg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="WebPhotos/p5.jpeg" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="WebPhotos/p6.jpeg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- service section starts  -->
+    <section class="service" id="service">
+      <h1 class="heading">our <span>services</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <i class="fas fa-envelope"></i>
+          <h3>Enroll for Events</h3>
+          <p>
+            Click on your desired event and give your details in order to enroll for the event,
+			Enjoy.
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-photo-video"></i>
+          <h3>Upcoming Events</h3>
+          <p>
+            You can know what events are going to be held and their info up to date.
+            Verify.
+          </p>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-music"></i>
+          <h3>Review the Events</h3>
+          <p>
+            You can review to the evnets that you have participated and guide us for the best.
+            Contribute.
+          </p>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <!-- about section starts  -->
+    <section class="about" id="about">
+      <h1 class="heading"><span>about</span> us</h1>
+
+      <div class="row">
+        <div class="image">
+          <img src="WebPhotos/p8.jpeg" alt="" />
+        </div>
+
+        <div class="content">
+          <h3>your occasion deserves our careful planning</h3>
+          <p>
+           Here we are very inspired and interested to let you know about what events
+           are goig to be held and we let you register or enroll for the events and
+           you can also give reviews for the events which are very useful for us
+           for the better.
+          </p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat
+            vero expedita incidunt provident quibusdam aut odit, numquam
+            nesciunt similique nisi.
+          </p>
+          <a href="#" class="btn">reach us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- gallery section starts  -->
+    <section class="gallery" id="gallery">
+      <h1 class="heading">our <span>gallery</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="images/hackathon.jpg" alt="" />
+          <h3 class="title">hackathon</h3>
+          <div class="icons">
+            <a href="enroll.html">Enroll</a>
+            <a href="review.html">Review</a> 
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/workshop.jpg" alt="" />
+          <h3 class="title">Workshop</h3>
+          <div class="icons">
+            <a href="enroll.html">Enroll</a>
+            <a href="review.html">Review</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/haunted.jpg" alt="" />
+          <h3 class="title">Haunted House</h3>
+          <div class="icons">
+            <a href="enroll.html">Enroll</a>
+            <a href="review.html">Review</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/vr.jpg" alt="" />
+          <h3 class="title">VR Games</h3>
+          <div class="icons">
+            <a href="enroll.html">Enroll</a>
+            <a href="review.html">Review</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/bungee.jpg" alt="" />
+          <h3 class="title">Bungee Jumping</h3>
+          <div class="icons">
+            <a href="enroll.html">Enroll</a>
+            <a href="review.html">Review</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/bull.jpg" alt="" />
+          <h3 class="title">Bull Riding</h3>
+          <div class="icons">
+            <a href="enroll.html">Enroll</a>
+            <a href="review.html">Review</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/treasure.jpg" alt="" />
+          <h3 class="title">Treasure Hunt</h3>
+          <div class="icons">
+            <a href="enroll.html">Enroll</a>
+            <a href="review.html">Review</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/presentation.jpg" alt="" />
+          <h3 class="title">Paper Presentation</h3>
+          <div class="icons">
+            <a href="enroll.html">Enroll</a>
+            <a href="review.html">Review</a>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    
+    <!-- review section starts  -->
+    <section class="reivew" id="review">
+      <h1 class="heading">Event <span>reviews</span></h1>
+      	<p th:text="'Total Reviews: ' + ${#lists.size(session.reviews)}"></p>
+      	<div class="review-slider swiper-container">
+        	<div class="swiper-wrapper" th:each="review : ${session.reviews}">
+          		<div class="swiper-slide box">
+            		<i class="fas fa-quote-right"></i>
+            		<div class="user">
+              			<div class="user-info">
+                			<h3 th:text="${review.username}">Vinaya</h3>
+                			<span th:text="${review.event}">Hackathon</span>
+              			</div>
+            		</div>
+            		<p th:text="${review.message}">
+				     	It is a wonderful experince, I explored many new skills
+            		</p>
+          		</div>
+          		<div class="swiper-slide box">
+            		<i class="fas fa-quote-right"></i>
+            		<div class="user">
+              			<div class="user-info">
+                			<h3 th:text="${review.username}">Vidheya</h3>
+                			<span th:text="${review.event}">Vasista</span>
+              			</div>
+            		</div>
+            		<p th:text="${review.message}">
+				     	Enjoyed a lot in that and I am so happy with that
+            		</p>
+          		</div>
+          		<div class="swiper-slide box">
+            		<i class="fas fa-quote-right"></i>
+            		<div class="user">
+              			<div class="user-info">
+                			<h3 th:text="${review.username}">Rama</h3>
+                			<span th:text="${review.event}">Farewell</span>
+              			</div>
+            		</div>
+            		<p th:text="${review.message}">
+				     	It made me joy and it is a memorable day
+            		</p>
+          		</div>
+         	</div>
+         </div>
+    </section>
+
+    <!-- contact section starts  -->
+    <section class="contact" id="contact">
+      <h1 class="heading"><span>contact</span> us</h1>
+
+      <form action="">
+        <div class="inputBox">
+          <input type="text" placeholder="name" />
+          <input type="email" placeholder="email" />
+        </div>
+        <div class="inputBox">
+          <input type="tel" placeholder="number" />
+          <input type="text" placeholder="subject" />
+        </div>
+        <textarea
+          name=""
+          placeholder="message"
+          id=""
+          cols="30"
+          rows="10"
+        ></textarea>
+        <input type="submit" value="send message" class="btn" id="contactButton" />
+      </form>
+    </section>
+
+    <!-- footer section starts  -->
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>Our Trio</h3>
+          <a href="#"><i class="fas fa-map-arrow-right"></i> Tharun Yetti </a>
+          <a href="#"> <i class="fas fa-map-arrow-right"></i> Mannar GSS </a>
+          <a href="#"> <i class="fas fa-map-arrow-right"></i> Sharanya Jakkula </a>
+        </div>
+
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="#home"> <i class="fas fa-arrow-right"></i> home </a>
+          <a href="#service"> <i class="fas fa-arrow-right"></i> service </a>
+          <a href="#about"> <i class="fas fa-arrow-right"></i> about </a>
+          <a href="#gallery"> <i class="fas fa-arrow-right"></i> gallery </a>
+          <a href="#review"> <i class="fas fa-arrow-right"></i> reivew </a>
+          <a href="#contact"> <i class="fas fa-arrow-right"></i> contact </a>
+        </div>
+
+        <div class="box">
+          <h3>contact info</h3>
+          <a href="#"> <i class="fas fa-phone"></i> +91 7075690330 </a>
+          <a href="#"> <i class="fas fa-envelope"></i> tharunyetti24@gmail.com </a>
+          <a href="#">
+            <i class="fas fa-map-marker-alt"></i> RK Valley,AP, India - 516330
+          </a>
+        </div>
+
+        <div class="box">
+          <h3>follow us</h3>
+          <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+          <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+          <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+          <a href="#"> <i class="fab fa-linkedin-in"></i> linkedin </a>
+        </div>
+      </div>
+
+      <div class="credit">
+        created by <span>Tremendous Trio</span> | all rights reserved
+      </div>
+    </section>
+
+    <!-- theme toggler  -->
+    <div class="theme-toggler">
+      <div class="toggle-btn">
+        <i class="fas fa-cog"></i>
+      </div>
+
+      <h3>choose color</h3>
+
+      <div class="buttons">
+        <div class="theme-btn" style="background: #ccff33"></div>
+        <div class="theme-btn" style="background: #d35400"></div>
+        <div class="theme-btn" style="background: #f39c12"></div>
+        <div class="theme-btn" style="background: #1abc9c"></div>
+        <div class="theme-btn" style="background: #3498db"></div>
+        <div class="theme-btn" style="background: #9b59b6"></div>
+      </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!--JS file-->
+    <script src="app.js"></script>
+  	<script>
+  		document.getElementById("contactButton").addEventListener("click",function(){
+  			alert("Submitted! We value your concern");
+  		});
+  		
+  		fetch('/api/volunteerStatus')
+			.then(response => response.json())
+			.then(data => {
+				const button = document.getElementById('volunteer');
+				if (data.result) {
+				    button.classList.add('vol-true');
+				    button.classList.remove('vol-false');
+				} else {
+				    button.classList.add('vol-false');
+				    button.classList.remove('vol-true');
+				}
+			});
+  		
+		window.embeddedChatbotConfig = {
+		chatbotId: "HizRpYt2DIrEJIjm_eM06",
+		domain: "www.chatbase.co"
+		}
+	</script>
+	<script
+	src="https://www.chatbase.co/embed.min.js"
+	chatbotId="HizRpYt2DIrEJIjm_eM06"
+	domain="www.chatbase.co"
+	defer>
+	</script>
+  </body>
+</html>

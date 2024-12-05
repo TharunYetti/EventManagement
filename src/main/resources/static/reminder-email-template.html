@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Event Reminder</title>
+</head>
+<body>
+    <p>Dear <b><span th:text="${name}"></span></b>,</p>
+    <p>This is a reminder for the upcoming event:</p>
+    <p><strong>Event:</strong> <span th:text="${eventName}"></span></p>
+    <p><strong>Date:</strong> <span th:text="${eventDate}"></span></p>
+    <p><strong>Location:</strong> <span th:text="${eventLocation}"></span></p>
+    <p>We look forward to seeing you there!</p>
+    <p>Best regards,</p>
+    <p>Your <i>Event Management Team</i></p>
+</body>
+</html>
+

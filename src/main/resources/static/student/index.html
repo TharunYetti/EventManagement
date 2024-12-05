@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="jquery-3.7.1.min.js"></script>
+    <title>Student_SignUp</title>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body background="Assets/p5.jpg">
+	<div class="button-container">
+		<button class="but1"><b>Sign-Up</b></button>
+		<button class="but2"><b>Log-In</b></button>
+    </div>
+	<div class="container">
+		<div class="signup">
+		    <form method="post" action="/student/add">
+		        <h1>SIGN-UP</h1>
+		        <label for="username">Username</label>
+		        <input type="text" id="username1" name="username" required pattern="R[0-9]{6}">
+				<label for="password">Password</label>
+		        <input type="password" id="password1" name="password" required>
+				<div style="display: flex;flex-direction: row;">
+					<div style="display: flex;flex-direction: column;">
+						<label for="name">Name</label>
+		        		<input type="text" class="smallInp" id="name" name="name" required>
+					</div>
+					<div style="display: flex;flex-direction: column;">
+						<label for="year">year</label>
+		        		<input type="text" class="smallInp" id="year" name="year" required>
+					</div>
+		        </div>
+		        <div style="display: flex;flex-direction: row;">
+					<div style="display: flex;flex-direction: column;">
+						<label for="phone">Phone</label>
+		        		<input type="text" class="smallInp" id="phone" name="phone" required>
+					</div>
+					<div style="display: flex;flex-direction: column;">
+						<label for="email">Email</label>
+		        		<input type="email" class="smallInp" id="email" name="email" required>
+					</div>
+		        </div>
+		        
+				<button type="submit" id="signUpSubmit">Submit</button>
+		    </form>
+		</div>
+		<div class="loginReplace">
+		</div>
+		<div class="login">
+		    <form method="post" action="/student/login" id="loginForm">
+		        <h1>LOG-IN</h1>
+		        <label for="username">Username</label>
+		        <input type="text" id="username2" name="username" required>
+		        <label for="password">Password</label>
+		        <input type="password" id="password2" name="password" required>
+		        <button type="submit" id="logInSubmit">Submit</button>
+		    </form>
+		</div>
+    </div>
+    <script>
+    	document.getElementById("signUpSubmit").addEventListener("click",function(event){
+            const passwordInp=document.getElementById("password1");
+            let pwd=passwordInp.value;
+            if(!checkPassword(pwd)){
+                //passwordInp.classList.add("invalid");
+                event.preventDefault();
+                return;
+            }
+            else{
+                //passwordInp.classList.remove("invalid");
+                let sub=confirm("You have submitted your details to register!");
+                if(!sub){
+                    event.preventDefault();
+                }
+            }
+    	});
+    	function checkPassword(password){
+            if(!/[A-Z]/.test(password)){
+                alert("Password must contain atleast one uppercase letter")
+                return false;
+            }
+            if(!/[a-z]/.test(password)){
+                alert("Password must contain atleast one lowercase leetter")
+                return false;
+            }
+            if(!/\d/.test(password)){
+                alert("Password must contain atleast one digit")
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Management Calendar</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FullCalendar CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
+
+  <style>
+    #calendar {
+	  max-width: 900px;
+	  margin: 0 auto;
+	}
+	
+	.event-title, .event-details {
+        text-align: center; /* Center align the text */
+        display: block;     /* Ensure the text takes up the full width */
+        margin: 0;          /* Remove any default margin */
+    }
+
+	.fc-daygrid-day.fc-day-today {
+	  border: 2px solid #ff9f00; /* Highlight today's date */
+	}
+
+	.fc-daygrid-day.fc-day-sat, .fc-daygrid-day.fc-day-sun {
+	  background-color: #FFDAB9; /* Light blue background for weekends */
+	}
+
+	.fc-event {
+	  border-radius: 4px;
+	}
+
+	.fc-event-highlight {
+	  background-color: #e0ffe0 !important; /* Highlight color for events */
+	  color: white !important; /* Text color for contrast */
+	}
+
+	.fc-day-with-event {
+	  background-color: #e0ffe0 !important; /* Light green background for dates with events */
+	}
+
+	.event-title {
+	  font-weight: bold;
+	  color: #333; /* Text color for event title */
+	}  
+	.event-details {
+	  font-weight: normal;
+	  color: #313; /* Text color for event title */
+	}  
+	.text-orange{
+		color:orange;
+	}
+  </style>
+</head>
+<body class="bg-dark">
+
+  <div class="container mt-5">
+    <h1 class="text-center text-orange"><strong>Event Calendar</strong></h1>
+    <div id="calendar" class="text-info"></div><br>
+  </div>
+
+  <!-- FullCalendar JS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Initialize FullCalendar -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      events: '/events',
+      dayCellDidMount: function(info) {
+		  const dateStr = info.dateStr;
+		  fetch('/events')
+			.then(response => {
+			  if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			  }
+			  return response.json();
+			})
+			.then(events => {
+			  //console.log(events); // Log the fetched events
+			  const hasEvent = events.some(event => event.start === dateStr);
+			  if (hasEvent) {
+				info.el.classList.add('fc-day-with-event');
+			  }
+			})
+			.catch(error => console.error('Error fetching events:', error));
+		},
+		eventContent: function(arg) {
+			return {
+				html: `
+				    <div class="event-title">${arg.event.title}</div>
+				    <div class="event-details">${arg.event.extendedProps.venue}</div>
+				`
+			};
+		},
+      eventClassNames: function(arg) {
+        return ['fc-event-highlight'];
+      }
+    });
+
+    calendar.render();
+  });
+</script>
+
+
+
+</body>
+</html>

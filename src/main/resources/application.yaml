@@ -1,0 +1,41 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/eventdb
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+  thymeleaf:
+    prefix: classpath:/static/  # Default: classpath:/templates/
+    suffix: .html                  # Default: .html
+    enabled: true                  # Enables Thymeleaf view resolution
+    mode: HTML                     # Thymeleaf mode (can also be XHTML, XML, TEXT, etc.)
+    cache: false                    # Caching templates (good for production)
+    encoding: UTF-8                # Character encoding (default is UTF-8)
+    content-type: text/html        # Default content type (can be customized)
+    servlet:
+      content-type: text/html
+  logging:
+    level:
+      org.springframework: DEBUG
+      com.tremendoustrio: DEBUG
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+chatbase:
+  api:
+    key: ${CHATBASE_API_KEY:}
